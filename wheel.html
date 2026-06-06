@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Wheel — Spin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="cs/wheel.css">
+    <link rel="stylesheet" href="cs/global.css">
+</head>
+
+<body>
+    <div class="bg-decoration"></div>
+
+    <h2>Spin the Wheel</h2>
+    <h3>Let fate decide</h3>
+
+    <div class="page-layout">
+
+        <div class="wheel-section">
+
+            <div class="pointer">▼</div>
+
+            <!-- Canvas wrapper so we can layer things on top of it -->
+            <div class="canvas-wrapper">
+                <canvas id="wheel" width="460" height="460"></canvas>
+
+                <!-- Center circle overlay (decorative hub) -->
+                <div class="wheel-hub"></div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT: Options panel -->
+        <div class="right-panel">
+
+            <!-- Spin button below the wheel -->
+            <button class="spin-btn" id="spin-btn" onclick="spinWheel()">SPIN</button>
+
+            <div id="js-result-card"></div>
+
+            <div class="options-panel">
+
+                <p class="panel-title">Options on the wheel</p>
+
+                <!-- JS will populate this list dynamically from localStorage -->
+                <ul id="options-list"></ul>
+
+                <button class="back-btn" onclick="goBack(false)"> &larr; Start Over </button>
+                <button class="back-btn" onclick="goBack(true)"> Edit Options </button>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/wheel.js"></script>
+
+</body>
+
+</html>
