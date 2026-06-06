@@ -1,0 +1,115 @@
+.container {
+    background: #111844;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container p {
+    font-weight: 600;
+    margin-bottom: 35px;
+    margin-left: -10px;
+    font-size: 18px;
+    align-self: flex-start;
+    color: #eae0cf;
+}
+
+/* Row Alignment */
+.row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    /* Clean spacing between elements */
+    margin-bottom: 1rem;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+        /* starts slightly above */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* settles into place */
+    }
+}
+
+.sr-no {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background: #ffb25b;
+    color: white;
+    font-weight: bold;
+    padding: 7px 12px;
+    border-radius: 20px;
+}
+
+.input {
+    flex-grow: 1;
+    /* Makes input take up remaining space */
+}
+
+input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Professional Button Tweaks */
+button {
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    transition: all 0.4s ease;
+}
+
+.del-btn button {
+    background: #dd5849;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 6px;
+}
+
+.del-btn button:hover {
+    background: #c0392b;
+}
+
+/* Styled Action Buttons inside container */
+.container>button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Add Option Button */
+.opt-btn {
+    background-color: transparent;
+    border: 2px dashed #00b2ca;
+    color: #00b2ca;
+    font-size: 12px;
+}
+
+.opt-btn:hover {
+    background-color: #00b2ca;
+    color: white;
+}
+
+/* Spin Button */
+.spin-btn {
+    margin-top: 1.5rem;
+}

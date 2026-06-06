@@ -1,0 +1,226 @@
+/* PAGE LAYOUT; wheel left, options panel right */
+.page-layout {
+    display: flex;
+    gap: 100px;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 960px;
+}
+
+.wheel-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+/* Pointer triangle — uses the same orange as .sr-no */
+.pointer {
+    font-size: 2.2rem;
+    color: #ffb25b;
+    line-height: 1;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+    animation: pointerBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes pointerBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+/* Canvas wrapper: lets us overlay the middle mini circle */
+.canvas-wrapper {
+    position: relative;
+    width: 430px;
+    height: 430px;
+}
+
+#wheel {
+    width: 430px;
+    height: 430px;
+    border-radius: 215px;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+.wheel-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #111844;
+    border: 3px solid #ffb25b;
+    z-index: 2;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
+}
+
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+    margin-top: 80px;
+}
+
+.spin-btn {
+    width: 100%;
+    padding: 12px;
+    font-weight: bold;
+}
+
+.spin-btn:disabled {
+    background-color: #5a9e8a;
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.options-panel {
+    background: #111844;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 240px;
+}
+
+.panel-title {
+    font-weight: 600;
+    font-size: 18px;
+    color: #eae0cf;
+}
+
+/* ----- Options list ----- */
+#options-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#options-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #eae0cf;
+    font-size: 15px;
+    animation: slideDown 0.3s ease;
+}
+
+#options-list li .color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Back button */
+.back-btn {
+    background: transparent;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: auto;
+}
+
+.back-btn:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+#js-result-card {
+    display: none;
+    background: #111844;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 48px 56px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    border: 2px solid #ffb25b;
+}
+
+.result-label {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #eae0cf;
+    opacity: 0.7;
+}
+
+.result-text {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffb25b;
+}
+
+/* RESPONSIVENESS */
+
+@media (max-width: 780px) {
+    .page-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .canvas-wrapper,
+    #wheel {
+        width: 320px;
+        height: 320px;
+    }
+
+    .options-panel {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .result-card {
+        padding: 36px 28px;
+        margin: 20px;
+    }
+
+    .result-text {
+        font-size: 2rem;
+    }
+}

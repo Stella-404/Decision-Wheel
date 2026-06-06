@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(to right, #4b5694, #7288ae);
+    /* The Magic: Centering everything perfectly on the screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Ensures it takes up full screen height */
+    padding: 30px 20px 60px;
+}
+
+h2 {
+    font-size: 50px;
+    margin-bottom: 0px;
+    text-align: center;
+    color: #fdfbf8;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #fffbf5;
+}
+
+.spin-btn {
+    background-color: #7dcfb6;
+    color: white;
+    box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    transition: all 0.4s ease;
+}
+
+.spin-btn:hover {
+    background-color: #99e2cc;
+    transform: translateY(-1px);
+}
