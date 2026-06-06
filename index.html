@@ -8,36 +8,40 @@
     <title>Decision Wheel</title>
     <!-- To link font "Awesome" for icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="cs/index.css">
+    <link rel="stylesheet" href="cs/global.css">
 </head>
 
 <body>
     <h2>Can't Decide?</h2>
     <h3>Let the wheel Choose</h3>
-
     <div class="container">
         <p>Your Options</p>
-        <div class="row">
-            <div class="sr-no">1</div>
-            <div class="input"><input type="text" placeholder="Enter your option here">
-            </div>
-            <div class="del-btn"><button><i class="fa-solid fa-x"></i></button></div>
-        </div>
-        <div class="row">
-            <div class="sr-no">2</div>
-            <div class="input"><input type="text" placeholder="Enter your option here">
-            </div>
-            <div class="del-btn"><button><i class="fa-solid fa-x"></i></button></div>
-        </div>
+        <div id="container">
 
-        <div id="input-row"></div>
+            <div class="row">
+                <div class="sr-no">1</div>
+                <div class="input"><input type="text" placeholder="Enter your option here">
+                </div>
+                <div class="del-btn"><button onclick="deleteOption(this)"><i class="fa-solid fa-x"></i></button></div>
+            </div>
+            <div class="row">
+                <div class="sr-no">2</div>
+                <div class="input"><input type="text" placeholder="Enter your option here">
+                </div>
+                <div class="del-btn"><button onclick="deleteOption(this)"><i class="fa-solid fa-x"></i></button></div>
+            </div>
+
+        </div>
 
         <button class="opt-btn" id="opt-btn" onclick="addNewOption()"><i class="fa-solid fa-plus"></i> Add
             Option</button>
         <button class="spin-btn" id="spin-btn" onclick="handleSpinSubmit()">Spin</button>
     </div>
 
-    <script src="input-page.js"></script>
+
+
+    <script src="JS/input-page.js"></script>
 </body>
 
 </html>
